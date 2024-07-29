@@ -16,7 +16,7 @@ exports.dashboard = async (req, res) => {
   };
 
   try {
-    // Mongoose "^7.0.0 Update
+   
     const notes = await Note.aggregate([
       { $sort: { updatedAt: -1 } },
       { $match: { user: mongoose.Types.ObjectId(req.user.id) } },
